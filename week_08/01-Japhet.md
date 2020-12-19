@@ -60,7 +60,16 @@ The first thing that the authors did was collect EM traces from a NodeMCU Amica 
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/exampledata.png" title="Example EM Trace" width="300" >}}
 
-These traces are then divided into 
+These traces are then divided into two datasets, the training dataset and the test dataset. Each of the models are trained with the training dataset and then tested to see if the accuracy of the labeling of the network. The authors have provided the confusion matrixes for each of the models as shown in the figures below.
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/zeromeancon.png" title="Example EM Trace" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/msecon.png" title="Example EM Trace" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/1dcon.png" title="Example EM Trace" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/2dcon.png" title="Example EM Trace" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/1dwboxcon.png" title="Example EM Trace" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/2dwboxcon.png" title="Example EM Trace" width="300" >}}
+
+
 
 [(OPTIONAL) PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM YOUR OWN EXPERIMENT]
 
