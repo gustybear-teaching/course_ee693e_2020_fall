@@ -45,18 +45,22 @@ The authors provide their [source code](https://github.com/rpp0/em-operation-ext
 
 The authors also provided their [training and testing datasets](http://wisecdata.ccs.neu.edu/) that they used. The datasets are compromised of EM traces during the execution of their chosen operations. An example trace can be seen below.
 
-{{ < figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/emtraceex.png" > }}
+{{ < figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/emtraceex.png" title="Example EM Trace" width="300> }}
 
 The architecture of their CNN can be found in the figure below. They feed the multi-dimensional data through 8 convolutional layers to extract different features, mainly instantaneous amplitude and the Short Time Fourier Transform (STFT), to be filtered down to the fully connected network that will then classify the frame. When designing the CNN, they had a few challenges they needed to overcome. Firstly, due to the variability of the operation executions, not all of the traces are of the same length. The authors decided to make the input of fixed length to accommodate the biggest trace size. Because of this, each of the convolutional layers have reduced filters to make the computation more tractable. In compensation, the inputs are widened and pooling layers added so that there is at best equal loss to the base model.
 
-{{ < figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/cnnarch.png" > }}
+{{ < figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/cnnarch.png" title="CNN architecture" width="300> }}
 
-The authors also describe two other CNN's for testing, a 2D CNN and another 1D CNN that also extracts extra features. The purpose of the 2D CNN is to determine whether or not the STFT is a viable input feature to a CNN. To accomplish this, the input is given a second dimension by overlapping each of teh traces by a 512-point STFT with the overlap being 50%, resulting in a 512x512 vector as an input. The purpose of the third CNN was to see if they can reasonably identify sub-operations in the trace. While the entire trace may be classified as a SHA1 operation, there are sub-operations within the SHA1 trace that the network does not pick out as features. This CNN's goal is to also classify sub-operations and boxing in the sub-operation in the trace.
+The authors also describe two other CNN's for testing, a 2D CNN and another 1D CNN that also extracts extra features. The purpose of the 2D CNN is to determine whether or not the STFT is a viable input feature to a CNN. To accomplish this, the input is given a second dimension by overlapping each of the traces by a 512-point STFT with the overlap being 50%, resulting in a 512x512 vector as an input. The purpose of the third CNN was to see if they can reasonably identify sub-operations in the trace. While the entire trace may be classified as a SHA1 operation, there are sub-operations within the SHA1 trace that the network does not pick out as features. This CNN's goal is to also classify sub-operations and boxing in the sub-operation in the trace.
 
 ### Experimentation
 [PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM THE PAPER]
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/example.png" title="[RESULTS FROM THE PAPER]" width="300" >}}
+The first thing that the authors did was collect EM traces from a NodeMCU Amica microcontroller using a USRP B210. The Microcontroller has modified firmware that contains the target operations that the researchers are targeting. The EM receiver was then placed near the microcontroller processor and an operation was executed in a time frame. The EM receiver took two measurements simultaneously. An instataneous amplitude reading and a EM spectrum reading, as shown in the figure below. 
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/exampledata.png" title="Example EM Trace" width="300" >}}
+
+These traces are then divided into 
 
 [(OPTIONAL) PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM YOUR OWN EXPERIMENT]
 
