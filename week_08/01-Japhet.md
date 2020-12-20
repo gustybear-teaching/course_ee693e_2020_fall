@@ -27,18 +27,17 @@ In Reverse Engineering, the ability to determine the operation that is being exe
 
 ## Review
 ### Strengths
-[SUMMARIZE THE STRENGTHS OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
-- [STRENGTHS 01]
-- [STRENGTHS o1]
+- Greatly goes into the strengths and weaknesses of each of the strategies that they tested.
+- Provides in-depth background of the methods used by their models in order.
 
 ### Weaknesses
-[SUMMARIZE THE WEAKNESSES OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
-- The authors do not expand on why the issue of using EM radiation leakage to determine the operation being executed is key to reverse engineering and potentially a serious security breach.
+- Paper heavily relies on the fact that adversaries would be able to gather data to train the networks, they themselves having a training dataset of 66GB for only a few operations.
 
 
 ### Detalied Comments
-[PROVIDE DETAILED EXPLIANATION OF THE STRENGHS AND WEAKNESSES LISTED ABOVE (>
-200 WORDS)]
+The authors go into great depth on the background information that they used to create the model in  their experiments, by providing links and also quoting the necessary details from the background models that they used, such as the convolution model that they based their convolutional layers on. They also explain clearly how their version is different and how they changed the base model to fit their specific needs through modification of the input, as well as some tweaks to the convolutional layers themselves. 
+Their analysis of each of  the classification strategies goes in depth on why they believe the results are as they are. In particular, how much the noise they were able to correctly identify in the CNN models where the mean-squared approach completely failed in matching anything and flagging all the inputs as noise.
+However, their model heavily relies on the adversary already having such models with a decent amount of data that will require expensive equipment to obtain. In their training data,  they used a software defined radio to capture EM traces of a microcontroller processor. The radio was placed only a few centimeters from the processor where their amplitude and frequency readings were had a decent resolution. They themselves also say that a good follow-up study was to see if a more powerful adversary would be capable of capturing EM leakage from significantly farther distance from very powerful sensors. So while the paper has proven that it is possible to reverse engineer a black-box hardware module via analyzing EM-leakage, the security concerns with a more powerful adversary was not discussed in this paper.
 
 ### Implementation
 The authors provide their [source code](https://github.com/rpp0/em-operation-extraction) to us. The language of choice for the analysis is Python and in the code repository, have provided the code for their zero-mean normalized cross-correlation and mean squared error analysis, as well as the code for their 1-D, 2-D, and 1-D with classification Convolutional Neural Networks along with their training algorithm for all the networks. They relied on TensorFlow for the backend of their CNN's by creating a TensorFlow implementation of another paper's CNN called [WaveNet] (https://deepmind.com/blog/article/wavenet-generative-model-raw-audio) whose model theirs are based on. 
@@ -60,10 +59,19 @@ The first thing that the authors did was collect EM traces from a NodeMCU Amica 
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/exampledata.png" title="Example EM Trace" width="300" >}}
 
-These traces are then divided into 
+These traces are then divided into two datasets, the training dataset and the test dataset. Each of the models are trained with the training dataset and then tested to see if the accuracy of the labeling of the network. There were two tupes of test conducted, one with a grey-box adersarial model, where the adversary had some idea of the operations being executed, and one with a black-box adversarial model, where the adversary had no idea of the operations being executed. The grey box model is assumed when they are testing the accuracy of their CNN's to classical template matching strategies. 
 
-[(OPTIONAL) PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM YOUR OWN EXPERIMENT]
+The authors have provided the confusion matrixes for each of the models as shown in the figures below.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/example.png" title="[RESULTS FROM YOU]" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/zeromeancon.png" title="Zero-Mean Cross-Correlation Confusion Matrix" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/msecon.png" title="Mean Squared Error Confusion Matrix" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/1dcon.png" title="1D CNN Confusion Matrix" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/2dcon.png" title="2D CNN Confusion Matrix" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/1dwboxcon.png" title="1D CNN with bounding boxes Confusion Matrix" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/2dwboxcon.png" title="2D CNN with bounding boxes Confusion Matrix" width="300" >}}
 
-[DISCUSS THE DIFFERENCES AND CAUSES BETWEEN RESULTS, IF ANY]
+The authors then tested how well the CNN's would do in a black-box adversary model. To do this, they injected snippets of a WiFi connection EM trace from the training dataset in between random snippets of the test dataset to rule out the possibility of the models relying on knowing the timing to classify operations as in the grey box model.
+
+The cumulated results from the paper results in the CNN's fairing 96.47% accuracy in the grey-box scenario, and 55.29% accuracy in the black-box scenario. These results are rather excellent as it proves that their models can help reverse engineering and possibly other adversaries in distinguishing operations.
+
+### Questions From the Audience
