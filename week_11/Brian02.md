@@ -78,20 +78,21 @@ attack accuracy]" width="300" >}}
 Figure 4 is a graph of the accuracy of the attack model if false packets are inserted to the traffic trace.
 
 ### Audience Questions
--####Smart devices work dependently to provide better user experience whithin a network. How would injecting false packets affect devices that work together? Also, are these devices currently updated in order to mitigate such attacks?
+
+-Smart devices work dependently to provide better user experience whithin a network. How would injecting false packets affect devices that work together? Also, are these devices currently updated in order to mitigate such attacks?
 
 
--####Can a different algorithm be implemented to increase accuracy against false data injection?
-A different algorithm can be used to offset the effects of the data injection described in the paper. The injection mentioned in the paper does not seem to be intrusive to the receiving device even if 90% of the data is false as mentioned, so this means that the injection could just be layered on top of the transmission. Given the case, a filter can definitely be made from machine learning to counter the injections.
+-Can a different algorithm be implemented to increase accuracy against false data injection?
+--A different algorithm can be used to offset the effects of the data injection described in the paper. The injection mentioned in the paper does not seem to be intrusive to the receiving device even if 90% of the data is false as mentioned, so this means that the injection could just be layered on top of the transmission. Given the case, a filter can definitely be made from machine learning to counter the injections.
 
--####How would the false data injection affect user experience?
+-How would the false data injection affect user experience?
 
--####As more different kinds of smart devices are introduced, would it make this identification method more or less effective?
+-As more different kinds of smart devices are introduced, would it make this identification method more or less effective?
 
--####will the false data affect other devices? if it does, can attackers exploit this to identify a false event?
+-will the false data affect other devices? if it does, can attackers exploit this to identify a false event?
 
--####Can you explain further how spoofed data works? To blend in well with the other packets, it would need the same legitimate reciever IP, how does the reciever know its a spoofed packet?
+-Can you explain further how spoofed data works? To blend in well with the other packets, it would need the same legitimate reciever IP, how does the reciever know its a spoofed packet?
 
--####What would be the effect of random packet transmission do to the accuracy of classifing packets?
+-What would be the effect of random packet transmission do to the accuracy of classifing packets?
 
--####Do you know how network transmission errors (i.e. malformed packets, retransmissions) are handled in the datasets? Are the filtered out before they are fed into the ML classifier?
+-Do you know how network transmission errors (i.e. malformed packets, retransmissions) are handled in the datasets? Are the filtered out before they are fed into the ML classifier?
