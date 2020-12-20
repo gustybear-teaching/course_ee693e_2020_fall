@@ -56,3 +56,28 @@ tags:
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/example.png" title="[RESULTS FROM YOU]" width="300" >}}
 
 [DISCUSS THE DIFFERENCES AND CAUSES BETWEEN RESULTS, IF ANY]
+
+### Audience Questions
+- What is the threshold? Or what is the experimental value in which they can differentiate a legitimate or genuine signal? MVN distribution in context.
+<br /> 
+
+- Is their spoting detector affected by the number of devices that the spoofer is utilizing?
+<br /> 
+
+- Is it possible to further improve the "maximum continuous spoofing time" by feeding more sample points? (By how much? Ex. 100 s to 47.3 s reduction, possible to reduce further?)
+<br /> 
+
+- The approach has 100% FPR in cross platform validation. How could this be useful?
+<br /> 
+
+- Would an attacker need anything else to bypass SPOTR if they knew what a genuine signal looked like?
+<br /> 
+
+- can a strong attacker use the same dataset to generate signal that is closer to genuine signal?
+<br /> 
+
+- Why can't an adversary mimic the fingerprinted signal?
+<br /> 
+
+- What are the benefits of using MVN apart from being able to handle multi-dimensional data?
+<br /> 
