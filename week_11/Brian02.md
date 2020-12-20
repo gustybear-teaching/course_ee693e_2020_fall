@@ -39,12 +39,10 @@ tags:
 
 ## Review
 ### Strengths
-
 - The paper gives a very well throught out attack, detailed as well, that matches their goal of infering the actions of a target.
 - The figures used were very well done, concise and clear.
 
 ### Weaknesses
-[SUMMARIZE THE WEAKNESSES OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
 - The authors seemed to be caught up in thier perception of what the goal was and seemed to ignore other possible scenarios.
 - The proposed attack has very strict limitations on what devices can be detected.
 
@@ -52,9 +50,8 @@ tags:
 The authors of this paper explained very well what steps and actions were taken and the results of such. This can be seen very clearly with the figures that were provided in the paper. Although the graphs and charts seemed plain, it had exactly what was necessary to show outcomes of each stage. Some examples could be the flow chart used to show the four stages in their attack. The attack itself has weaknesses that were partly looked over, although they were acknowledged at the very end, those faults do bring up some interesting points. The attack scenario focuses on trying to ultimately interpret the transmission from IoT devices and infer what someone in the house is doing. Although this was achieved in the paper, as seen by the high accuracy rate, this system would only work if there is one person in the scenario. Given multiple people in the house, the current attack would not work. This was briefly mentioned by the authors, but considering how many households or environments have multiple people this current architecture is extremely limited. The other weakness involves what devices in an IoT network can be a part of their attack. Their adversary model requires each device in a house to be previously researched in order for their machine learning algorithm to be able to work. This needs to be done because each device has unique traits to what their transmission looks like, so if an unidentified device is being used, the algorithim won't be able to properly fingerprint the characteristics from that device's transmission. 
 
 ### Implementation
-[PROVIDE DETAILED EXPLIANATION OF THE CODES/DATA PROVIDED BY THE PAPER] (>
-200 WORDS)]
-[PROVIDE LINK(S) TO THE CODES/DATA PROVIDED BY THE PAPER](https://github.com/gustybear-teaching/course_ee693e_2020_fall)
+
+
 
 ### Experimentation
 [PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM THE PAPER]
