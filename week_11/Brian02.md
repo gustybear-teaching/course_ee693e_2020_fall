@@ -79,20 +79,28 @@ Figure 4 is a graph of the accuracy of the attack model if false packets are ins
 
 ### Audience Questions
 
--Smart devices work dependently to provide better user experience whithin a network. How would injecting false packets affect devices that work together? Also, are these devices currently updated in order to mitigate such attacks?
+- Smart devices work dependently to provide better user experience whithin a network. How would injecting false packets affect devices that work together? Also, are these devices currently updated in order to mitigate such attacks?
+ <br />The injections usually mean a delay in time between devices that work together as it has more data to look through. This could lead to delays and 
 
 
--Can a different algorithm be implemented to increase accuracy against false data injection?
- <br />A different algorithm can be used to offset the effects of the data injection described in the paper. The injection mentioned in the paper does not seem to be intrusive to the receiving device even if 90% of the data is false as mentioned, so this means that the injection could just be layered on top of the transmission. Given the case, a filter can definitely be made from machine learning to counter the injections.
-
--How would the false data injection affect user experience?
-
--As more different kinds of smart devices are introduced, would it make this identification method more or less effective?
-
--will the false data affect other devices? if it does, can attackers exploit this to identify a false event?
-
--Can you explain further how spoofed data works? To blend in well with the other packets, it would need the same legitimate reciever IP, how does the reciever know its a spoofed packet?
-
--What would be the effect of random packet transmission do to the accuracy of classifing packets?
-
--Do you know how network transmission errors (i.e. malformed packets, retransmissions) are handled in the datasets? Are the filtered out before they are fed into the ML classifier?
+- Can a different algorithm be implemented to increase accuracy against false data injection?
+ <br />A different algorithm can be used to offset the effects of the data injection described in the paper. The injection mentioned in the paper is random noise, if that is the case an algorithim can definetley remove it.
+ 
+- How would the false data injection affect user experience?
+ <br />Data injections can make it difficult for devices to properly undestand a transmission, so there could be multiple delays in actions or even no action if there is enough false data.
+ 
+- As more different kinds of smart devices are introduced, would it make this identification method more or less effective?
+ <br />It would make this method more difficult, as this method inherently relies on having analysed the traffic of a device before and using that data as a comparison to the target's.
+ 
+- will the false data affect other devices? if it does, can attackers exploit this to identify a false event?
+ <br />The false data will affect other devices in terms of understanding what the transmission is. A false positive can be made as this current method looks mostly at packet length and size as features so a random data injection made to seem like an action can be done.
+ 
+- Can you explain further how spoofed data works? To blend in well with the other packets, it would need the same legitimate reciever IP, how does the reciever know its a spoofed packet?
+ <br />The packets would have indentifiers to show the receiver that this is what it should read. The spoofer would then look for that identifier and use it.
+ 
+- What would be the effect of random packet transmission do to the accuracy of classifing packets?
+ <br />The effects can be seen in figure 4 where the more packets that are injected the less accurate their attack gets.
+ 
+- Do you know how network transmission errors (i.e. malformed packets, retransmissions) are handled in the datasets? Are the filtered out before they are fed into the ML classifier?
+ <br />In a real world scenario you would have to find a way to filter out the errors, if not the classifiers would probably not be able to handle it as they currently don't have a protocol for this event.
+ 
