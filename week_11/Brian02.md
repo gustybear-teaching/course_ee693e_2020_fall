@@ -83,7 +83,7 @@ Figure 4 is a graph of the accuracy of the attack model if false packets are ins
 
 
 -Can a different algorithm be implemented to increase accuracy against false data injection?
---A different algorithm can be used to offset the effects of the data injection described in the paper. The injection mentioned in the paper does not seem to be intrusive to the receiving device even if 90% of the data is false as mentioned, so this means that the injection could just be layered on top of the transmission. Given the case, a filter can definitely be made from machine learning to counter the injections.
+ <br />A different algorithm can be used to offset the effects of the data injection described in the paper. The injection mentioned in the paper does not seem to be intrusive to the receiving device even if 90% of the data is false as mentioned, so this means that the injection could just be layered on top of the transmission. Given the case, a filter can definitely be made from machine learning to counter the injections.
 
 -How would the false data injection affect user experience?
 
