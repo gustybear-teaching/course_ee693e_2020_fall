@@ -33,7 +33,6 @@ The goal of this paper was to introduce a new method of securely deploying an in
 
 
 ### Weaknesses
-[SUMMARIZE THE WEAKNESSES OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
 - Security discussion is very lacking and provides no useful feedback and analysis of other types of security holes in the set up process.
 
 ### Detalied Comments
@@ -53,15 +52,22 @@ The main idea of the *Box* was to create a simple way for wireless node sensor n
 
 *Box* is a cost effective solution that helps alleviate the problem and scales extremely well. Simply, place all the wireless sensor devices into the faraday cage and through over-the-air (OTA) transmission will either set up the devices with the requisite network information for initial deployment or updating to the correct firmware. To achieve this, the only requirement is to have an OTA capable bootloader so that the *Box* can update the firmware securely. This is feasible and cheap to the network owners as this places the expense on the manufacturer. 
 
-It is composed of two parts: the faraday cage itself, and a Raspberry Pi 3. The faraday cage is made up of materials that can block many high power injection attacks and does not leak any EM radiation for a side-channel attack. The Raspberry Pi is connected to multiple things including a speaker, LEDs, and a magnet sensor. The magnet sensor prevents the Raspberry Pi from doing anything when the *Box* is not secured closed. The speakers and LEDs are the main interface in which directions and information will be presented to the user. The Raspbery Pi itself would be preprogrammed to contain the network information and any new firmware that needs to be installed onto the sensors. When the box is secured, the Raspberry Pi will create its own ad hoc network. From here, the Pi will then check to see if it needs to install any new firmware onto the devices. Any new firmware will need to also have been loaded onto the Pi before the *Box* was closed. If there is new firmware to install, it will then use the OTA capable bootloader of the device to securely flash the firmware onto it. Afterwards it then tranmits the network information for inital connection to the central backend before shutting down the sensors. From here, the sensors are ready to be set up in the field without any additional work from the operator.
+It is composed of two parts: the faraday cage itself, and a Raspberry Pi 3. The faraday cage is made up of materials that can block many high power injection attacks and does not leak any EM radiation for a side-channel attack. The Raspberry Pi is connected to multiple things including a speaker, LEDs, and a magnet sensor. The magnet sensor prevents the Raspberry Pi from doing anything when the *Box* is not secured closed. The speakers and LEDs are the main interface in which directions and information will be presented to the user.
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/faradaycage.png" title="Box Hardware" width="300" >}}
+
+The Raspbery Pi itself would be preprogrammed to contain the network information and any new firmware that needs to be installed onto the sensors. When the box is secured, the Raspberry Pi will create its own ad hoc network. From here, the Pi will then check to see if it needs to install any new firmware onto the devices. Any new firmware will need to also have been loaded onto the Pi before the *Box* was closed. If there is new firmware to install, it will then use the OTA capable bootloader of the device to securely flash the firmware onto it. Afterwards it then tranmits the network information for inital connection to the central backend before shutting down the sensors. From here, the sensors are ready to be set up in the field without any additional work from the operator.
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/boxstatemachine.png" title="State Machine of Box" width="300" >}}
 
 ### Experimentation
-[PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM THE PAPER]
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/example.png" title="[RESULTS FROM THE PAPER]" width="300" >}}
+The authors tested the usability of their hardware solution. The reasearchers hypothesized that the *Box* solution was 1) faster than needing to fiddle around with wires and 2) intuitive as to not allow users to make security-critical errors. They gathered 31 subjects, 21 male and 10 female, in the age range of 23 - 53. Out of the 31 total people, 20 had computer science and electrical engineering backgrounds that they considered *exprets*. Those who do not have experience with security or those who possessed a degree that is not of computer science or electrical engineering were deemed *novices*. All of the participants were given the task of setting up a wireless sensor network using the box by programming sensor nodes.
 
-[(OPTIONAL) PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM YOUR OWN EXPERIMENT]
+The authors do note that due to the very small sample size, their findings are purely qualatative. All in all, both groups were able to program the nodes using the box faster than using a wired method while making fewer errors and being less hesitant in using the technology as shown in the figure below.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/example.png" title="[RESULTS FROM YOU]" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/usability.png" title="Usability Study Results" width="300" >}}
 
-[DISCUSS THE DIFFERENCES AND CAUSES BETWEEN RESULTS, IF ANY]
+When surveyed at the end of the end of the exprirament, everone expressed positivley about the *Box*, especially those who had industrial training. There were some individuals in the experts group were a bit more hesitant about the product as they were more curious to know the inner workings and tiny details about how the device worked, along with more detailed explanations in the instructions that they were given. In the end, the authors conclude that their product can help change an ever growing industry.
+
+### Questions From the Audience
