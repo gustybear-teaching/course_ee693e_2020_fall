@@ -1,5 +1,5 @@
 ---
-title: Week [No. 9] Wireless Fingerprints
+title: Week No. 9 Wireless Fingerprints
 subtitle: Fall, 2020
 type: book
 icon_pack: fas

@@ -1,5 +1,5 @@
 ---
-title: "01: [Spotr: GPS Spoofing Detection via Device Fingerprinting] by [M. Foruhandeh, A. Z. Mohammed, G. Kildow, P. Berges, and R. Gerdes]"
+title: "Spotr: GPS Spoofing Detection via Device Fingerprinting by M. Foruhandeh, A. Z. Mohammed, G. Kildow, P. Berges, and R. Gerdes"
 date: 2020-08-30
 type: book
 commentable: true
