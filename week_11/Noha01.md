@@ -70,4 +70,32 @@ Setup Variants: Although both configuration variants build an e2e-key, replace t
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/blob/main/week_11/images/Lost%20and%20Found%20fig3b.png" title="[RESULTS FROM YOU]" width="300" >}}
 
-[DISCUSS THE DIFFERENCES AND CAUSES BETWEEN RESULTS, IF ANY]
+
+
+### Audience Questions
+1. For currently existing bluetooth tracking architectures, can the location of the finder be detected by an attacker? 
+yes all the current bluetooth finders can detect the location of the finder.
+
+2. Can a newer BLE specification (BLE 5) be used to increase security, or maybe a different protocol to communicate?
+You can secure the communication between the finder and the phone, but from the phone to the server that link has a leakage information. End to end communication key from device to another device it is not something for a Bluetooth.
+
+3. Can an attacker purposely use the finder to search for lost items and keep it for himself?
+yes he can know the location of the lost items.
+
+
+4. Would different brands of finders be able to use PrivateFind to crowdfind each other?
+If you want that happens. It must change their adjustment setup and use a unified one. Because the different encryptions between each other if you not using it between the same server you will not be able to radically pass on information. 
+
+5. is it possible an attacker injects fake geolocation for an existing finder to the server?
+As they mentioned in the anlaysis for all the products mentioned in the paper, yes the attacker can injects fake location for an existing finder because it can detect its location.
+
+6. Would PrivateFinder increase battery consumption as obfuscation and encryption techniques are layered on?
+They mentioned that PrivateFinder provides have the same features as most commercial products and runs on the same or comparable hardware. This shows that privacy-friendly and secure Bluetooth finders can be built without increasing expenses for the hardware and without a loss of features for the user.
+
+7. How does added encryption in PrivateFind affect the power consumption of the bluetooth finder? Is the battery life shorter or the same as commercially avaliable products not implementing PrivateFind?
+The battery life is the same as the commercially available products that they mentioned in the paper.
+
+8. Are bluetooth finders still susceptible to location spoofing attacks even though location data is handled through a centralized server/cloud?
+All products tested in the paper were designed and implemented without a focus on privacy. which make it all susceptible to location attacks.Some of the tested products forced the user to create an account for a cloud service not immediately required for using the product. Other products automatically reported the user’s location to a cloud service without an observable reason.
+
+
