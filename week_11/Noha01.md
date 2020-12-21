@@ -21,7 +21,7 @@ A Bluetooth finder is a compact battery-powered gadget that can be clipped to va
 ***
 
 ## Presentation
-{{< youtube w7Ft2ymGmfc >}}
+{{< https://www.youtube.com/watch?v=ZFBQW_xu2F4 >}}
 
 [PROVIDE A VIDEO RECORD OF YOUR PRESENTATION]
 ***
