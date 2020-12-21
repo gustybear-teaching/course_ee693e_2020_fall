@@ -80,25 +80,25 @@ printed in the graph with logarithmic scale on Y-axis. Logarithmic scale is used
 
 ### Audience Questions
 - What is the threshold? Or what is the experimental value in which they can differentiate a legitimate or genuine signal? MVN distribution in context.
-<br /> 
+<br /> The threshold is where the error equal rate is zero, in this case. By taking the features of a legit signal and using that to train the MVN and threshold, a baseline for what to expect is created in the form of a threshold. If a signal that was not within specifications of what is expected, that would mean it does not meet the threshold, so it is a fake.
 
 - Is their spoting detector affected by the number of devices that the spoofer is utilizing?
-<br /> 
+<br /> In a way yes. Spotr is meant to be used on a GPS receiver and when there are mutliple spoofed signals that are being transmitted at the same time, it would increase the detection time as it has to go through extra signals before finding the genuine one.
 
 - Is it possible to further improve the "maximum continuous spoofing time" by feeding more sample points? (By how much? Ex. 100 s to 47.3 s reduction, possible to reduce further?)
-<br /> 
+<br /> It is possible to reduce further, but it seems like the limitations from the spoofing time comes from much testing is done to create the MVN model. If more testing is done, then the MVN will be able to come up with even more accurate expectations of a authentic signal, lowering the amount of time needed before a spoof is found.
 
 - The approach has 100% FPR in cross platform validation. How could this be useful?
-<br /> 
+<br /> This means that Spotr can only be trained to recognize fake signals from cases that has been seen before. So if an entirely new attack is being used, Spotr would not be able to detect it.
 
 - Would an attacker need anything else to bypass SPOTR if they knew what a genuine signal looked like?
-<br /> 
+<br /> If they knew what a genuine signal looks like and created a very similar one and transmitted that, Spotr would be able to detect it if the training included a similar attack. This happens because the spoofer is using a genuine signal so the fake signal they are now transmitting would look very similar to the real thing, but with only changes in PVT. Spotr is capable of being trained to find even slight changes to the expected signal, so as long as it is a genuine signal that was meant for this GPS receiver that was being spoofed, detection should happen.
 
 - can a strong attacker use the same dataset to generate signal that is closer to genuine signal?
-<br /> 
+<br /> Yes that is possible. One of the flaws with this method is the intense training that needs to happen for a detection to happen. If your determination and budget is large enough, a fake signal that can be within threshold of what the expected signal looks like can be made.
 
 - Why can't an adversary mimic the fingerprinted signal?
-<br /> 
+<br /> The adversary can only be so close to the original signal because there will be hardware limitations to how perfect of a copy can be made. So if you were trying to bypass Spotr's detection, you would need to have a copy that is more accurate than the MVN threshold.
 
 - What are the benefits of using MVN apart from being able to handle multi-dimensional data?
-<br /> 
+<br /> MVN is used in this case to analyse the features that are taken from the authentic signal and is used to create an expectation of the signal in terms of position, velocity, and time. 
