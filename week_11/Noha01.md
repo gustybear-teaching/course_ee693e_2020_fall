@@ -87,10 +87,15 @@ yes he can know the location of the lost items.
 If you want that happens. It must change their adjustment setup and use a unified one. Because the different encryptions between each other if you not using it between the same server you will not be able to radically pass on information. 
 
 5. is it possible an attacker injects fake geolocation for an existing finder to the server?
+As they mentioned in the anlaysis for all the products mentioned in the paper, yes the attacker can injects fake location for an existing finder because it can detect its location.
 
 6. Would PrivateFinder increase battery consumption as obfuscation and encryption techniques are layered on?
+They mentioned that PrivateFinder provides have the same features as most commercial products and runs on the same or comparable hardware. This shows that privacy-friendly and secure Bluetooth finders can be built without increasing expenses for the hardware and without a loss of features for the user.
 
 7. How does added encryption in PrivateFind affect the power consumption of the bluetooth finder? Is the battery life shorter or the same as commercially avaliable products not implementing PrivateFind?
+The battery life is the same as the commercially available products that they mentioned in the paper.
 
 8. Are bluetooth finders still susceptible to location spoofing attacks even though location data is handled through a centralized server/cloud?
+All products tested in the paper were designed and implemented without a focus on privacy. which make it all susceptible to location attacks.Some of the tested products forced the user to create an account for a cloud service not immediately required for using the product. Other products automatically reported the user’s location to a cloud service without an observable reason.
+
 
