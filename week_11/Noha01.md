@@ -54,7 +54,7 @@ They detail how PrivateFind was realized in hardware, firmware, and as an Androi
 They use the hardware offload of the Bluetooth controller, if assisted, to retain the battery on the handset.
 The privatefind implementation shows in fig.5 
 
-[PROVIDE LINK(S) TO THE CODES/DATA PROVIDED BY THE PAPER](https://github.com/gustybear-teaching/course_ee693e_2020_fall)
+[PROVIDE LINK(S) TO THE CODES/DATA PROVIDED BY THE PAPER](https://github.com/gustybear-teaching/course_ee693e_2020_fall/blob/main/week_11/images/Lost%20and%20Found%20fig.5.png)
 
 ### Experimentation
 PrivateFind makes the search of finder crowds without leaking private data. It avoids the leakage of data by default, as the server never sees in plaintext any GPS coordinates. Additionally, it makes anonymous Usage of the quest environment for crowds. It helps to discourage both the server resources and other users from monitoring it.  An end-to-end encryption key and an encryption key are defined in the setup process. Identifiers prove that the finder is actually owned by the owner, and it comes in two variants.  
