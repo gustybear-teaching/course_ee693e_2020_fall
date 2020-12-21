@@ -37,7 +37,7 @@ GPS has very quickly taken on a vital role in the world that we currently live i
 
 
 ### Detalied Comments
-
+The background information on the topics of GPS, and the testing procedure of Spotr were written very clearly, and in depth. The paper starts with a brief description of the history and architecture of GPS and the problems associated with it’s past, then describes related works and other solutions that have been looked into for overpower and spoofing attacks. The overall breakdown from the different components of GPS, how GPS works, and the explanation of solutions proposed were extremely helpful and in depth. The problem arises when it seems that the paper might have spent too much time on the background topics related to Spotr rather than Spotr itself. Although there is a lot of information regarding the testing process and explanations for their results, there was not a lot pertaining to the choices or testing of the algorithms and design of the MVN. A lot of attention was placed towards why Spotr is the choice for GPS security but if the paper also included the design constraints about why MVN was chosen, or maybe the thought process behind the testing or finalizing the MVN algorithms was included as well, it would have been more complete as a paper. As of right now it seems to only point out a problem and provide a solution, without really showing how they came upon that solution.
 
 ### Implementation
 [PROVIDE DETAILED EXPLIANATION OF THE CODES/DATA PROVIDED BY THE PAPER] (>
