@@ -1,5 +1,7 @@
 ---
-title: "01: [PAPER NAME] by [AUTHOR NAME(S)]"
+title: "01:Lost and Found: Stopping Bluetooth Finders from
+Leaking Private Information
+  by Mira Weller, Jiska Classen, Fabian Ullrich"
 date: 2020-08-30
 type: book
 commentable: true
