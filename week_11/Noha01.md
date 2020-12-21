@@ -64,7 +64,7 @@ Proving Ownership: Only the owner of the finder can execute the configuration mo
 Setup Variants: Although both configuration variants build an e2e-key, replace the idinit, and guarantee ownership through physical access, they vary significantly. The local design, shown in Figure 3a as a sequence diagram, guarantees that a finder is physically accessible to the user. In addition, the configuration shares e2e-key and idinit. The local system does not require a third party and there is no server registration. Note that Idinit can also be reset to a random value during initialization in this local version, since there are no external dependencies on it. At the expense of privacy, the manufacturer-verified configuration improves protection. It offers the same security properties as the local configuration. On top of that, it helps the vendor to verify that the finder is really one they have produced and attaches the Bluetooth configuration with manufacturer-verified encryption. Figure 3b illustrates the overall process.
 
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_11/images/example.png" title="[RESULTS FROM THE PAPER]" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/blob/main/week_11/images/Lost%20and%20Found%20fig3a.png]" width="300" >}}
 
 [(OPTIONAL) PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM YOUR OWN EXPERIMENT]
 
