@@ -17,8 +17,7 @@ tags:
 
 ***
 ## Paper Summary
-[PROVIDE ONE PARAGRAPH SUMMARIZING OF THE PAPER (>100 WORDS)]
-***
+GPS has very quickly taken on a vital role in the world that we currently live in, but GPS has inherent security flaws that are easily exploited. There are two prominent ways to breach the security of a transmission, an overpower attack or a spoofing attack. An overpower attack is to simply apply a more powerful signal than the ones that can be detected by a target, and because GPS receivers automatically lock onto the strongest signal, these types of attacks are the easiest to apply. Spoofing attacks are a little bit more complicated, it relies on trying to imitate a real satellite signal but with different data than what the real satellite is sending. Spotr aims to be a cost effective way to handle these two types of attacks, by implementing their program onto only the GPS receivers instead of other proposed methods which are not as efficient or cost effective. 
 
 ## Presentation
 {{< youtube w7Ft2ymGmfc >}}
@@ -28,14 +27,14 @@ tags:
 
 ## Review
 ### Strengths
-[SUMMARIZE THE STRENGTHS OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
-- [STRENGTHS 01]
-- [STRENGTHS o1]
+- The paper is very well written, in terms of the author's thought process on the steps taken and in describing how their testing worked.
+- The explanation on what GPS is, and how the entire transmission and receiving process works is very well thought out and thorough.
+
 
 ### Weaknesses
-[SUMMARIZE THE WEAKNESSES OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
-- [WEAKNESSES 01]
-- [WEAKNESSES o1]
+- Although the paper clearly explains how Spotr was tested there was not much explained about the algorithms used and the backend of Spotr.
+- There was too much time spent on trying to explain the background on GPS, related works, and other solutions that have been proposed.
+
 
 ### Detalied Comments
 [PROVIDE DETAILED EXPLIANATION OF THE STRENGHS AND WEAKNESSES LISTED ABOVE (>
