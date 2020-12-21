@@ -68,6 +68,6 @@ Setup Variants: Although both configuration variants build an e2e-key, replace t
 
 [(OPTIONAL) PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM YOUR OWN EXPERIMENT]
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_11/images/example.png" title="[RESULTS FROM YOU]" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/blob/main/week_11/images/Lost%20and%20Found%20fig3b.png" title="[RESULTS FROM YOU]" width="300" >}}
 
 [DISCUSS THE DIFFERENCES AND CAUSES BETWEEN RESULTS, IF ANY]
