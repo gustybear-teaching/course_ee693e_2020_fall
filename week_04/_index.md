@@ -1,5 +1,5 @@
 ---
-title: Week [No.]
+title: Week 4 Wireless Localization and Security
 subtitle: Fall, 2020
 type: book
 icon_pack: fas

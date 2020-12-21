@@ -1,5 +1,5 @@
 ---
-title: Week [No.]
+title: Week 7 Physical-layer Security
 subtitle: Fall, 2020
 type: book
 icon_pack: fas
