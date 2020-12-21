@@ -34,13 +34,13 @@ In Reverse Engineering, the ability to determine the operation that is being exe
 - Paper heavily relies on the fact that adversaries would be able to gather data to train the networks, they themselves having a training dataset of 66GB for only a few operations.
 
 
-### Detalied Comments
-The authors go into great depth on the background information that they used to create the model in  their experiments, by providing links and also quoting the necessary details from the background models that they used, such as the convolution model that they based their convolutional layers on. They also explain clearly how their version is different and how they changed the base model to fit their specific needs through modification of the input, as well as some tweaks to the convolutional layers themselves. 
+### Detailed Comments
+The authors go into great depth on the background information that they used to create the model in  their experiments, by providing links and also quoting the necessary details from the background models that they used, such as the convolution model that they based their convolutional layers on. They also explain clearly how their version is different and how they changed the base model to fit their specific needs through modification of the input, as well as some tweaks to the convolutional layers themselves.
 Their analysis of each of  the classification strategies goes in depth on why they believe the results are as they are. In particular, how much the noise they were able to correctly identify in the CNN models where the mean-squared approach completely failed in matching anything and flagging all the inputs as noise.
 However, their model heavily relies on the adversary already having such models with a decent amount of data that will require expensive equipment to obtain. In their training data,  they used a software defined radio to capture EM traces of a microcontroller processor. The radio was placed only a few centimeters from the processor where their amplitude and frequency readings were had a decent resolution. They themselves also say that a good follow-up study was to see if a more powerful adversary would be capable of capturing EM leakage from significantly farther distance from very powerful sensors. So while the paper has proven that it is possible to reverse engineer a black-box hardware module via analyzing EM-leakage, the security concerns with a more powerful adversary was not discussed in this paper.
 
 ### Implementation
-The authors provide their [source code](https://github.com/rpp0/em-operation-extraction) to us. The language of choice for the analysis is Python and in the code repository, have provided the code for their zero-mean normalized cross-correlation and mean squared error analysis, as well as the code for their 1-D, 2-D, and 1-D with classification Convolutional Neural Networks along with their training algorithm for all the networks. They relied on TensorFlow for the backend of their CNN's by creating a TensorFlow implementation of another paper's CNN called [WaveNet] (https://deepmind.com/blog/article/wavenet-generative-model-raw-audio) whose model theirs are based on. 
+The authors provide their [source code](https://github.com/rpp0/em-operation-extraction) to us. The language of choice for the analysis is Python and in the code repository, have provided the code for their zero-mean normalized cross-correlation and mean squared error analysis, as well as the code for their 1-D, 2-D, and 1-D with classification Convolutional Neural Networks along with their training algorithm for all the networks. They relied on TensorFlow for the backend of their CNN's by creating a TensorFlow implementation of another paper's CNN called [WaveNet] (https://deepmind.com/blog/article/wavenet-generative-model-raw-audio) whose model theirs are based on.
 
 The authors also provided their [training and testing datasets](http://wisecdata.ccs.neu.edu/) that they used. The datasets are compromised of EM traces during the execution of their chosen operations. An example trace can be seen below.
 
@@ -55,11 +55,11 @@ The authors also describe two other CNN's for testing, a 2D CNN and another 1D C
 ### Experimentation
 [PROVIDE FIGURES/TABLE/WRITTEN-PROOF FROM THE PAPER]
 
-The first thing that the authors did was collect EM traces from a NodeMCU Amica microcontroller using a USRP B210. The Microcontroller has modified firmware that contains the target operations that the researchers are targeting. The EM receiver was then placed near the microcontroller processor and an operation was executed in a time frame. The EM receiver took two measurements simultaneously. An instataneous amplitude reading and a EM spectrum reading, as shown in the figure below. 
+The first thing that the authors did was collect EM traces from a NodeMCU Amica microcontroller using a USRP B210. The Microcontroller has modified firmware that contains the target operations that the researchers are targeting. The EM receiver was then placed near the microcontroller processor and an operation was executed in a time frame. The EM receiver took two measurements simultaneously. An instantaneous amplitude reading and a EM spectrum reading, as shown in the figure below.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_08/images/exampledata.png" title="Example EM Trace" width="300" >}}
 
-These traces are then divided into two datasets, the training dataset and the test dataset. Each of the models are trained with the training dataset and then tested to see if the accuracy of the labeling of the network. There were two tupes of test conducted, one with a grey-box adersarial model, where the adversary had some idea of the operations being executed, and one with a black-box adversarial model, where the adversary had no idea of the operations being executed. The grey box model is assumed when they are testing the accuracy of their CNN's to classical template matching strategies. 
+These traces are then divided into two datasets, the training dataset and the test dataset. Each of the models are trained with the training dataset and then tested to see if the accuracy of the labeling of the network. There were two types of test conducted, one with a grey-box adversarial model, where the adversary had some idea of the operations being executed, and one with a black-box adversarial model, where the adversary had no idea of the operations being executed. The grey box model is assumed when they are testing the accuracy of their CNN's to classical template matching strategies.
 
 The authors have provided the confusion matrixes for each of the models as shown in the figures below.
 
@@ -75,3 +75,26 @@ The authors then tested how well the CNN's would do in a black-box adversary mod
 The cumulated results from the paper results in the CNN's fairing 96.47% accuracy in the grey-box scenario, and 55.29% accuracy in the black-box scenario. These results are rather excellent as it proves that their models can help reverse engineering and possibly other adversaries in distinguishing operations.
 
 ### Questions From the Audience
+How can these EM signal leakage be protected? Are there any existing methods?
+The leakage can be protected by adding shielding to the machine running the cryptographic operations, or perhaps preventing the presence of attackers in close vicinity to the machine.
+
+If they were to use more expensive hardware, like they mentioned, how would it show better results?
+It would show better results as it would be able to sample at a higher rate, as well as capture data at multiple locations.
+
+Do they consider in their work the impact of microarchitectural effects such as caching?
+They consider the impacts of caching and accordingly "warm up the cache by executing the operation once before the Operation Supported ACK message is sent, which is before the capture itself has started".
+
+Can they increase their accuracy by using a different deep learning algorithm?
+There are perhaps various other methods of implementing a Convolutional Neural Network that can improve accuracy, that would take time in developing. A good way to increase accuracy is to improve the capture of data to use as an input for the model.
+
+The black-box model has a significant lower accuracy than the gray-box model. Can this be improved? (e.g. using some sequential model like RNN)
+It is difficult to improve the accuracy of the black-box model to levels similar to the gray-box model, as the attacker would have no control over firmware or inputs of the device under test. As stated prior, a way to improve accuracy may be to sample the electromagnetic leakage with better equipment, and to train the model with data from a wider variety of devices.
+
+Does Black-box adversarial model work when the target is a multi core processor ?
+The black-box adversarial model should still work if the target is a multicore processor, as long as the model is trained with devices that utilize multiple cores, assuming that multicore devices have a significant difference from single core processors.
+
+Could adding some dummy bits affect the classification, at the cost of efficiency?
+We believe that adding dummy bits would not affect the classification much, as if we recall correctly, machine learning could determine whether parts of a data have an affect on the classification or if they are just random bits.
+
+Integrated circuits are being condensed using chip-stacking methods (heterogeneous integration). Would this present a problem to EM side-channel detection/attacks?
+This may present some problem to the EM side-channel attacks as it may increase the noise floor when trying to detect the signal, making training and classification more difficult.
