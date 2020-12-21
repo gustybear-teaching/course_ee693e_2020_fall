@@ -35,13 +35,19 @@ They analyzed Nut Find3, Tile Mate, Tile Pro, Musegear Finder, Pearl Callstel Ke
 - Implementation of PrivateFind as an open-source software close to current finder hardware on a low-cost IoT platform.
 
 ### Weaknesses
-[SUMMARIZE THE WEAKNESSES OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
-- [WEAKNESSES 01]
-- [WEAKNESSES o1]
+There are extremely dubious several applications, and they do not Note that this information could be obtained for other purposes. These protection and privacy questions can be quickly overcome in the 
+For example, by not using the app and the subsequent backend services, Sending to the cloud provider any unwanted results. They've agreed to on a more detailed plan and the design and execution of the 
+PrivateFind, a privacy-friendly Bluetooth finder that avoids locations Cloud Server leakage.
+
+- They belive that their sytem can achieve a more advanced security and privacy standard than any
+commercial system they analyzed analyzed but they didn't compare their results with the other systems after implemntation.
+
 
 ### Detalied Comments
-[PROVIDE DETAILED EXPLIANATION OF THE STRENGHS AND WEAKNESSES LISTED ABOVE (>
-200 WORDS)]
+
+They carried out a detailed study of the most common Bluetooth finders currently on the market and evaluated their reliability and privacy. There is no design for any of the market-leading goods in a privacy-friendly manner, and many of them have severe security in several stages, defects. They found that All tested products have been developed and introduced without any privacy Emphasis, any of the tested devices pressured the user to build a cloud service account that was not actually necessary for the software to be used. The user's position was unintentionally recorded to a cloud provider by other users without an obvious purpose, any of the products had slight vulnerabilities in terms of security, such as inadequate API defense against unwanted contact. In comparison, some devices have skipped proper certification of the backend services' TLS license, in their corresponding backend, a few devices had significant security bugs that allowed attackers to gain access to other users' private data, and for more than a year, through numerous efforts to get in contact with them over various communication networks, one provider dismissed their reports of those vulnerabilities. The related cloud provider leaks confidential customer information until now, which can be readily accessed.
+Their system has the same capabilities and runs on the same or equivalent hardware as other commercial products. This illustrates that Bluetooth finders that are privacy-friendly and safe can be designed without growing hardware costs and without the consumer missing functionality.
+
 
 ### Implementation
 They detail how PrivateFind was realized in hardware, firmware, and as an Android app. For hardware Platform. After disassembly of popular Bluetooth finders, they were aware of the Bluetooth Smart Beacon System nRF51822. Its diameter is as small as 20 mm and comes with all the necessary features. They used the Bluetooth Low Energy Development Kit for the nRF51 Series during their development. It is based on the same chip but planned for development, ensuring that the board has more possibilities for input and output and is easier to flash. Constraints remain the same for firmware running on the chip. A fundamental finder example, which activates an alarm on Bluetooth link failure, already comes with the creation platform. Just the configuration, registration, and report protocols for PrivateFind had to be enforced.  For optimizing Hardware. There are also some encryption approaches available on the application site, such as Advanced Encryption Standard (AES). Encryption is Verified in the Missing Finder Data associated data encryption (AEAD), e.g., random nonce AES-CTR for associated data and authentication SHA256-HMAC. It is possible to use various types of encryption depending on the hardware platform.  Finally, the Android Application. The app runs in the background and establishes a Bluetooth link with the developed finder. This is achieved by Nordic Semiconductor using the Android BLE library. A finder's last recorded location is saved locally and be seen in Figure 5b. When the connection is broken, it plays a sound according to the user's tastes on the mobile or on the finder. In addition, the app in the background scans for and tracks other missing finders. 
