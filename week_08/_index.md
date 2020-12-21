@@ -1,5 +1,5 @@
 ---
-title: Week [No.]
+title: Week 8 Hardware, Firmware, and Side-Channel
 subtitle: Fall, 2020
 type: book
 icon_pack: fas
