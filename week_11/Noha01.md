@@ -28,9 +28,11 @@ A Bluetooth finder is a compact battery-powered gadget that can be clipped to va
 
 ## Review
 ### Strengths
-[SUMMARIZE THE STRENGTHS OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
-- [STRENGTHS 01]
-- [STRENGTHS o1]
+They analyzed Nut Find3, Tile Mate, Tile Pro, Musegear Finder, Pearl Callstel Key Finder, Gigaset g-tag, and Cube tracker which are top-ranked finders sold worldwide. In addition, a few lesser-known brands are evaluated on the basis of the ST17H26 chip that can be handled through various smartphone applications, including iTracing, iSearching, and FindELFI. Their review uncovers significant concerns with defense and privacy. Both problems were reported to the manufacturers, and most have been resolved by now. This illustrates how certain low-cost Internet of Things (IoT) providers seem to ignore sufficient product protection even today. A solution for protecting privacy has yet to be suggested, considering the number of Bluetooth finders available. Thus, for an IoT platform similar to those used on low-budget finders, they develop and enforce the privacy-preserving secure finder protocol PrivateFind.
+
+- In popular Bluetooth finder ecosystems, they conduct a very good detailed analysis of features, security, and privacy.
+-	Development of a new PrivateFind solution that embraces all the functionality observed, but maintains anonymity and privacy.
+- Implementation of PrivateFind as an open-source software close to current finder hardware on a low-cost IoT platform.
 
 ### Weaknesses
 [SUMMARIZE THE WEAKNESSES OF THE PAPER IN FULL SENTENCES (>50 WORDS)]
