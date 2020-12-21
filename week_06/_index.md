@@ -1,5 +1,5 @@
 ---
-title: Week [No. 6]
+title: Week No. 6 Mobile App Security
 subtitle: Fall, 2020
 type: book
 icon_pack: fas

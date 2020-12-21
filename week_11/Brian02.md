@@ -1,7 +1,7 @@
 ---
-title: "02: [Peek-a-Boo: I see your smart home activities, even encrypted!] 
+title: "Peek-a-Boo: I see your smart home activities, even encrypted!
 
-by [Abbas Acar
+by Abbas Acar
 , Hossein Fereidooni
 , Tigist Abera
 , Amit Kumar Sikder
@@ -9,7 +9,7 @@ by [Abbas Acar
 ,Hidayet Aksu
 , Mauro Conti
 , Ahmad-Reza Sadeghi
-, Selcuk Uluagac]"
+, Selcuk Uluagac"
 date: 2020-08-30
 type: book
 commentable: true
