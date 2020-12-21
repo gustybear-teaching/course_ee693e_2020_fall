@@ -37,8 +37,7 @@ GPS has very quickly taken on a vital role in the world that we currently live i
 
 
 ### Detalied Comments
-[PROVIDE DETAILED EXPLIANATION OF THE STRENGHS AND WEAKNESSES LISTED ABOVE (>
-200 WORDS)]
+
 
 ### Implementation
 [PROVIDE DETAILED EXPLIANATION OF THE CODES/DATA PROVIDED BY THE PAPER] (>
