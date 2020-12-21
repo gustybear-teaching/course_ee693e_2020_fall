@@ -7,7 +7,7 @@ type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): [PRESENTER NAME(S)]"
+summary: "Presenter(s): Brian Lu and Noha Mohammed"
 
 # Provide other tags that describe the paper
 tags:
@@ -17,7 +17,7 @@ tags:
 
 ***
 ## Paper Summary
-[PROVIDE ONE PARAGRAPH SUMMARIZING OF THE PAPER (>100 WORDS)]
+A Bluetooth finder is a compact battery-powered gadget that can be clipped to valuable objects such as pockets, keychains, or bicycles. The finder retains a Bluetooth link to the user's phone, and the user is alerted automatically of the loss of connection. This paper presents the first detailed study of existing commercial Bluetooth finders for security and privacy. Their analysis reveals some major vulnerability flaws in these smartphone devices products and the related downstream services in the cloud. They also reveal that all cloud-based items examined are leaking more private data than is needed for their respective cloud services. Overall, there is a wide demand for Bluetooth finders, but none of the current models is privacy-friendly. They narrow this gap by creating and integrating PrivateFind to ensure that consumer positions are never exposed to third parties. It is configured to run on hardware close to current finders, enabling vendors to upgrade their systems using PrivateFind.
 ***
 
 ## Presentation
