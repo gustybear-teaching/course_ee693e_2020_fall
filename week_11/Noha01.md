@@ -21,7 +21,7 @@ A Bluetooth finder is a compact battery-powered gadget that can be clipped to va
 ***
 
 ## Presentation
-{{< https://www.youtube.com/watch?v=ZFBQW_xu2F4 >}}
+{{< youtube ZFBQW_xu2F4 >}}
 
 [PROVIDE A VIDEO RECORD OF YOUR PRESENTATION]
 ***
@@ -35,8 +35,8 @@ They analyzed Nut Find3, Tile Mate, Tile Pro, Musegear Finder, Pearl Callstel Ke
 - Implementation of PrivateFind as an open-source software close to current finder hardware on a low-cost IoT platform.
 
 ### Weaknesses
-There are extremely dubious several applications, and they do not Note that this information could be obtained for other purposes. These protection and privacy questions can be quickly overcome in the 
-For example, by not using the app and the subsequent backend services, Sending to the cloud provider any unwanted results. They've agreed to on a more detailed plan and the design and execution of the 
+There are extremely dubious several applications, and they do not Note that this information could be obtained for other purposes. These protection and privacy questions can be quickly overcome in the
+For example, by not using the app and the subsequent backend services, Sending to the cloud provider any unwanted results. They've agreed to on a more detailed plan and the design and execution of the
 PrivateFind, a privacy-friendly Bluetooth finder that avoids locations Cloud Server leakage.
 
 - They belive that their sytem can achieve a more advanced security and privacy standard than any
@@ -50,9 +50,9 @@ Their system has the same capabilities and runs on the same or equivalent hardwa
 
 
 ### Implementation
-They detail how PrivateFind was realized in hardware, firmware, and as an Android app. For hardware Platform. After disassembly of popular Bluetooth finders, they were aware of the Bluetooth Smart Beacon System nRF51822. Its diameter is as small as 20 mm and comes with all the necessary features. They used the Bluetooth Low Energy Development Kit for the nRF51 Series during their development. It is based on the same chip but planned for development, ensuring that the board has more possibilities for input and output and is easier to flash. Constraints remain the same for firmware running on the chip. A fundamental finder example, which activates an alarm on Bluetooth link failure, already comes with the creation platform. Just the configuration, registration, and report protocols for PrivateFind had to be enforced.  For optimizing Hardware. There are also some encryption approaches available on the application site, such as Advanced Encryption Standard (AES). Encryption is Verified in the Missing Finder Data associated data encryption (AEAD), e.g., random nonce AES-CTR for associated data and authentication SHA256-HMAC. It is possible to use various types of encryption depending on the hardware platform.  Finally, the Android Application. The app runs in the background and establishes a Bluetooth link with the developed finder. This is achieved by Nordic Semiconductor using the Android BLE library. A finder's last recorded location is saved locally and be seen in Figure 5b. When the connection is broken, it plays a sound according to the user's tastes on the mobile or on the finder. In addition, the app in the background scans for and tracks other missing finders. 
+They detail how PrivateFind was realized in hardware, firmware, and as an Android app. For hardware Platform. After disassembly of popular Bluetooth finders, they were aware of the Bluetooth Smart Beacon System nRF51822. Its diameter is as small as 20 mm and comes with all the necessary features. They used the Bluetooth Low Energy Development Kit for the nRF51 Series during their development. It is based on the same chip but planned for development, ensuring that the board has more possibilities for input and output and is easier to flash. Constraints remain the same for firmware running on the chip. A fundamental finder example, which activates an alarm on Bluetooth link failure, already comes with the creation platform. Just the configuration, registration, and report protocols for PrivateFind had to be enforced.  For optimizing Hardware. There are also some encryption approaches available on the application site, such as Advanced Encryption Standard (AES). Encryption is Verified in the Missing Finder Data associated data encryption (AEAD), e.g., random nonce AES-CTR for associated data and authentication SHA256-HMAC. It is possible to use various types of encryption depending on the hardware platform.  Finally, the Android Application. The app runs in the background and establishes a Bluetooth link with the developed finder. This is achieved by Nordic Semiconductor using the Android BLE library. A finder's last recorded location is saved locally and be seen in Figure 5b. When the connection is broken, it plays a sound according to the user's tastes on the mobile or on the finder. In addition, the app in the background scans for and tracks other missing finders.
 They use the hardware offload of the Bluetooth controller, if assisted, to retain the battery on the handset.
-The privatefind implementation shows in fig.5 
+The privatefind implementation shows in fig.5
 
 [PROVIDE LINK(S) TO THE CODES/DATA PROVIDED BY THE PAPER](https://github.com/gustybear-teaching/course_ee693e_2020_fall/blob/main/week_11/images/Lost%20and%20Found%20fig.5.png)
 
@@ -73,7 +73,7 @@ Setup Variants: Although both configuration variants build an e2e-key, replace t
 
 
 ### Audience Questions
-1. For currently existing bluetooth tracking architectures, can the location of the finder be detected by an attacker? 
+1. For currently existing bluetooth tracking architectures, can the location of the finder be detected by an attacker?
 yes all the current bluetooth finders can detect the location of the finder.
 
 2. Can a newer BLE specification (BLE 5) be used to increase security, or maybe a different protocol to communicate?
@@ -84,7 +84,7 @@ yes he can know the location of the lost items.
 
 
 4. Would different brands of finders be able to use PrivateFind to crowdfind each other?
-If you want that happens. It must change their adjustment setup and use a unified one. Because the different encryptions between each other if you not using it between the same server you will not be able to radically pass on information. 
+If you want that happens. It must change their adjustment setup and use a unified one. Because the different encryptions between each other if you not using it between the same server you will not be able to radically pass on information.
 
 5. is it possible an attacker injects fake geolocation for an existing finder to the server?
 As they mentioned in the anlaysis for all the products mentioned in the paper, yes the attacker can injects fake location for an existing finder because it can detect its location.
@@ -97,5 +97,3 @@ The battery life is the same as the commercially available products that they me
 
 8. Are bluetooth finders still susceptible to location spoofing attacks even though location data is handled through a centralized server/cloud?
 All products tested in the paper were designed and implemented without a focus on privacy. which make it all susceptible to location attacks.Some of the tested products forced the user to create an account for a cloud service not immediately required for using the product. Other products automatically reported the user’s location to a cloud service without an observable reason.
-
-

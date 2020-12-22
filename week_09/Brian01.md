@@ -17,7 +17,7 @@ tags:
 
 ***
 ## Paper Summary
-GPS has very quickly taken on a vital role in the world that we currently live in, but GPS has inherent security flaws that are easily exploited. There are two prominent ways to breach the security of a transmission, an overpower attack or a spoofing attack. An overpower attack is to simply apply a more powerful signal than the ones that can be detected by a target, and because GPS receivers automatically lock onto the strongest signal, these types of attacks are the easiest to apply. Spoofing attacks are a little bit more complicated, it relies on trying to imitate a real satellite signal but with different data than what the real satellite is sending. Spotr aims to be a cost effective way to handle these two types of attacks, by implementing their program onto only the GPS receivers instead of other proposed methods which are not as efficient or cost effective. 
+GPS has very quickly taken on a vital role in the world that we currently live in, but GPS has inherent security flaws that are easily exploited. There are two prominent ways to breach the security of a transmission, an overpower attack or a spoofing attack. An overpower attack is to simply apply a more powerful signal than the ones that can be detected by a target, and because GPS receivers automatically lock onto the strongest signal, these types of attacks are the easiest to apply. Spoofing attacks are a little bit more complicated, it relies on trying to imitate a real satellite signal but with different data than what the real satellite is sending. Spotr aims to be a cost effective way to handle these two types of attacks, by implementing their program onto only the GPS receivers instead of other proposed methods which are not as efficient or cost effective.
 
 ## Presentation
 {{< youtube w7Ft2ymGmfc >}}
@@ -44,36 +44,24 @@ There are two types of attacks that Spotr is tested against, a physical layer at
 
 
 ### Experimentation
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/briantable3.png" title="[Table 3: Genuine datasets. SatGrid is the data that we collected at Blacksburg and Arlington, and TexBat is the data provided
-by Radionavigation Lab in UT Austin detailed in Sec. 4.4 collected by their 2015 hardware platform (D2).]" width="300" >}}
-<br /> 
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/briantable3.png" title="[Table 3: Genuine datasets. SatGrid is the data that we collected at Blacksburg and Arlington, and TexBat is the data provided by Radionavigation Lab in UT Austin detailed in Sec. 4.4 collected by their 2015 hardware platform (D2).]" width="300" >}}
+<br />
 
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/briantable4.png" title="[Table 4: Spoofed datasets. There are different hardware platforms (fingerprinters) that are used for generating them. The
-fingerprinter of TexBat on 2012 (D1) is different from TexBat 2015 (D2). SatGrid attacker also has a separate hardware (D3).]" width="300" >}}
-<br /> 
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/briantable4.png" title="[Table 4: Spoofed datasets. There are different hardware platforms (fingerprinters) that are used for generating them. The fingerprinter of TexBat on 2012 (D1) is different from TexBat 2015 (D2). SatGrid attacker also has a separate hardware (D3).]" width="300" >}}
+<br />
 
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/briantable1.png" title="[Table 1: This table demonstrates the efficacy of Spotr for detection/tracking of spoofed/genuine signals (listed in Tables 3 and
-4) across locations, times, in the presence or absence of multipath (MP), and for different attacks using different hardware
-platforms (TexBat:D1 and D2 or SatGrid:D3). The table reports thresholds for obtaining equal error rates (EER) of zero at the
-training phase, as well as false positives (FPR) and false negatives (FNR) with the number of required sample point observations
-(n) for attaining the reported FPR and FNR at the testing phase. ]" width="300" >}}
-<br /> 
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/briantable1.png" title="[Table 1: This table demonstrates the efficacy of Spotr for detection/tracking of spoofed/genuine signals (listed in Tables 3 and 4) across locations, times, in the presence or absence of multipath (MP), and for different attacks using different hardware platforms (TexBat:D1 and D2 or SatGrid:D3). The table reports thresholds for obtaining equal error rates (EER) of zero at the training phase, as well as false positives (FPR) and false negatives (FNR) with the number of required sample point observations (n) for attaining the reported FPR and FNR at the testing phase. ]" width="300" >}}
+<br />
 
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/briantable2.png" title="[Table 2: (a) Evaluation of the detection process for the genuine (G1-G4) and spoofed (S1-S4) data generated by SatGrid (D3) using
-FPR and FNR values. (b) 6-fold cross validation on TexBat spoofing scenarios (S1-S6) including both multipath/non-multipath
-data for the 2012 fingerprinter (D1) based on one sample point of observation. (c) 6-fold cross validation on TexBat spoofing
-scenarios (S2-S6) based on 40,000 sample points of observations.]" width="300" >}}
-<br /> 
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/briantable2.png" title="[Table 2: (a) Evaluation of the detection process for the genuine (G1-G4) and spoofed (S1-S4) data generated by SatGrid (D3) using FPR and FNR values. (b) 6-fold cross validation on TexBat spoofing scenarios (S1-S6) including both multipath/non-multipath data for the 2012 fingerprinter (D1) based on one sample point of observation. (c) 6-fold cross validation on TexBat spoofing scenarios (S2-S6) based on 40,000 sample points of observations.]" width="300" >}}
+<br />
 
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/brianfigure5.png" title="[Figure 5: The results of using Spotr for detection/tracking of spoofed/genuine signals (a) across locations (b)-(f) cross time
-(c)-(g) in the presence or absence of multipath (d)-(e)-(h) for spoofing attacks of TexBat using different hardware platforms (i).
-In Figures (a)-(b)-(c) and (g), most of the MVN scores for spoofed signals (depicted by red line) are exact zero values, hence not
-printed in the graph with logarithmic scale on Y-axis. Logarithmic scale is used for better visualization]" width="300" >}}
-<br /> 
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2020_fall/raw/main/week_09/images/brianfigure5.png" title="[Figure 5: The results of using Spotr for detection/tracking of spoofed/genuine signals (a) across locations (b)-(f) cross time (c)-(g) in the presence or absence of multipath (d)-(e)-(h) for spoofing attacks of TexBat using different hardware platforms (i). In Figures (a)-(b)-(c) and (g), most of the MVN scores for spoofed signals (depicted by red line) are exact zero values, hence not printed in the graph with logarithmic scale on Y-axis. Logarithmic scale is used for better visualization]" width="300" >}}
+<br />
 
 
 
@@ -101,4 +89,4 @@ printed in the graph with logarithmic scale on Y-axis. Logarithmic scale is used
 <br /> The adversary can only be so close to the original signal because there will be hardware limitations to how perfect of a copy can be made. So if you were trying to bypass Spotr's detection, you would need to have a copy that is more accurate than the MVN threshold.
 
 - What are the benefits of using MVN apart from being able to handle multi-dimensional data?
-<br /> MVN is used in this case to analyse the features that are taken from the authentic signal and is used to create an expectation of the signal in terms of position, velocity, and time. 
+<br /> MVN is used in this case to analyse the features that are taken from the authentic signal and is used to create an expectation of the signal in terms of position, velocity, and time.
