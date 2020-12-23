@@ -1,5 +1,5 @@
 ---
-title: Week 10 Location Privacy
+title: "Week 10: Location Privacy"
 subtitle: Fall, 2020
 type: book
 icon_pack: fas

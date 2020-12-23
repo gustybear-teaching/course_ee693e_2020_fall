@@ -1,5 +1,5 @@
 ---
-title: Week 2 Mobile Payments and Fraud
+title: "Week 02: Mobile Payments and Fraud"
 subtitle: Fall, 2020
 type: book
 icon_pack: fas
